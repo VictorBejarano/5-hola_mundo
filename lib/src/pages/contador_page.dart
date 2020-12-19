@@ -33,15 +33,42 @@ class _ContadorPageState extends State<ContadorPage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // TODO: Revisar porque el print no funciona en android
-          log('Hola mundo');
-          _conteo++;
-          setState(() {});
-        },
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: _crearBotones(),
+    );
+  }
+
+  Widget _crearBotones() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        SizedBox(
+          width: 30.0,
+        ),
+        FloatingActionButton(
+          child: Icon(
+            Icons.exposure_zero,
+          ),
+          onPressed: () {},
+        ),
+        Expanded(
+          child: SizedBox(),
+        ),
+        FloatingActionButton(
+          child: Icon(
+            Icons.remove,
+          ),
+          onPressed: () {},
+        ),
+        SizedBox(
+          width: 5.0,
+        ),
+        FloatingActionButton(
+          child: Icon(
+            Icons.add,
+          ),
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }
