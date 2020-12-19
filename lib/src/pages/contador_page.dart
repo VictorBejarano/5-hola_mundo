@@ -48,7 +48,7 @@ class _ContadorPageState extends State<ContadorPage> {
           child: Icon(
             Icons.exposure_zero,
           ),
-          onPressed: () {},
+          onPressed: _reset,
         ),
         Expanded(
           child: SizedBox(),
@@ -57,7 +57,7 @@ class _ContadorPageState extends State<ContadorPage> {
           child: Icon(
             Icons.remove,
           ),
-          onPressed: () {},
+          onPressed: _sustraer,
         ),
         SizedBox(
           width: 5.0,
@@ -66,9 +66,27 @@ class _ContadorPageState extends State<ContadorPage> {
           child: Icon(
             Icons.add,
           ),
-          onPressed: () {},
+          onPressed: _agregar,
         ),
       ],
     );
+  }
+
+  void _agregar() {
+    setState(() {
+      _conteo++;
+    });
+  }
+
+  void _sustraer() {
+    setState(() {
+      _conteo--;
+    });
+  }
+
+  void _reset() {
+    setState(() {
+      _conteo = 0;
+    });
   }
 }
